@@ -10,7 +10,7 @@ vagrantfile-local:
         network:
             private_network: 10.0.0.10
             forwarded_port:
-                TaLkjq76iUao:
+                1HwfRdF2LvRE:
                     host: '5228'
                     guest: '22'
         post_up_message: ''
@@ -32,7 +32,7 @@ vagrantfile-local:
                     - '--hiera_config /vagrant/puphpet/puppet/hiera.yaml'
                     - '--parser future'
         synced_folder:
-            UbakDqaGXsWA:
+            IDVibcjAx9JF:
                 owner: www-data
                 group: www-data
                 source: ~/www
@@ -67,6 +67,13 @@ server:
         - git
         - wget
         - wkhtmltopdf
+users_groups:
+    install: '1'
+    groups: {  }
+    users: {  }
+cron:
+    install: '1'
+    jobs: {  }
 firewall:
     install: '1'
     rules: null
@@ -82,36 +89,75 @@ apache:
     modules:
         - rewrite
     vhosts:
-        Kpf0IclWhdMN:
+        t6kq3jvlwzkf:
             servername: local.test
             docroot: /var/www/local/web
             port: '80'
-            override:
-                - All
-            options:
-                - Indexes
-                - FollowSymLinks
-                - MultiViews
+            directories:
+                nrdt3gwxc6qi:
+                    provider: directory
+                    path: /var/www/local/web
+                    options:
+                        - Indexes
+                        - FollowSymlinks
+                        - MultiViews
+                    allow_override:
+                        - All
+                    require:
+                        - all
+                        - granted
+                    custom_fragment: ''
             engine: php
             custom_fragment: ''
-            ssl: '0'
             ssl_cert: ''
             ssl_key: ''
             ssl_chain: ''
             ssl_certs_dir: ''
-        0bEXrh5tDtqk:
+        wbah35fnbfuj:
             servername: local.test
             docroot: /var/www/local/web
             port: '443'
-            override:
-                - All
-            options:
-                - Indexes
-                - FollowSymLinks
-                - MultiViews
+            directories:
+                nsduck7bnls0:
+                    provider: directory
+                    path: /var/www/local/web
+                    options:
+                        - Indexes
+                        - FollowSymlinks
+                        - MultiViews
+                    allow_override:
+                        - All
+                    require:
+                        - all
+                        - granted
+                    custom_fragment: ''
             engine: php
             custom_fragment: ''
             ssl: '1'
+            ssl_cert: ''
+            ssl_key: ''
+            ssl_chain: ''
+            ssl_certs_dir: ''
+        8lseyvo25fr6:
+            servername: ym.test
+            docroot: /var/www/yummi/web
+            port: '80'
+            directories:
+                jgpfwwbdc3k1:
+                    provider: directory
+                    path: /var/www/yummi/web
+                    options:
+                        - Indexes
+                        - FollowSymlinks
+                        - MultiViews
+                    allow_override:
+                        - All
+                    require:
+                        - all
+                        - granted
+                    custom_fragment: ''
+            engine: php
+            custom_fragment: ''
             ssl_cert: ''
             ssl_key: ''
             ssl_chain: ''
@@ -125,7 +171,7 @@ nginx:
         proxy_buffers: '4 256k'
     upstreams: {  }
     vhosts:
-        YmZpBTwrSlxF:
+        7mibiy3akmv9:
             proxy: ''
             server_name: awesome.dev
             server_aliases:
@@ -152,10 +198,10 @@ php:
         php:
             - cli
             - curl
+            - gd
             - imagick
             - intl
             - mcrypt
-            - gd
         pear: {  }
         pecl:
             - APC
@@ -200,7 +246,7 @@ drush:
 ruby:
     install: '1'
     versions:
-        g0XET1WKOar3:
+        eA8D0W2NLk9F:
             version: ''
 nodejs:
     install: '1'
@@ -209,7 +255,7 @@ python:
     install: '1'
     packages: {  }
     versions:
-        HHjohDBTfwPC:
+        XizDGm1dLrZQ:
             version: ''
 mysql:
     install: '1'
@@ -217,7 +263,7 @@ mysql:
     root_password: '123456'
     adminer: 0
     databases:
-        3K4a7ZAqmNTg:
+        PhRJrZlMX11h:
             grant:
                 - ALL
             name: local
