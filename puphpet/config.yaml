@@ -208,6 +208,7 @@ php:
             - mysql
             - redis
             - pecl_http
+            - mongo
     ini:
         display_errors: On
         error_reporting: '-1'
