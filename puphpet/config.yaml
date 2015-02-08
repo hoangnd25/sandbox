@@ -6,9 +6,9 @@ vagrantfile-local:
         hostname: ''
         memory: '1024'
         cpus: '1'
-        chosen_provider: virtualbox
+        chosen_provider: parallels
         network:
-            private_network: 10.0.0.10
+            private_network: 192.168.1.1
             forwarded_port:
                 taXKdj3Q1VKz:
                     host: '5228'
@@ -67,6 +67,7 @@ server:
         - git
         - wget
         - wkhtmltopdf
+        - zsh
 users_groups:
     install: '1'
     groups: {  }
@@ -188,7 +189,7 @@ apache:
             ssl_certs_dir: ''
     mod_pagespeed: 0
 nginx:
-    install: 0
+    install: '0'
     settings:
         default_vhost: 1
         proxy_buffer_size: 128k
